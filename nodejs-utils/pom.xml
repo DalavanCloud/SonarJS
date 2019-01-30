@@ -72,7 +72,7 @@
           <executable>tar</executable>
           <workingDirectory>src/test/</workingDirectory>
           <arguments>
-            <argument>--force-local</argument>
+            <!--<argument>&#45;&#45;force-local</argument>-->
             <argument>-cJ</argument>
             <argument>-f</argument>
             <argument>${project.build.testOutputDirectory}${file.separator}test.tar.xz</argument>

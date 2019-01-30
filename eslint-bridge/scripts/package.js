@@ -25,7 +25,7 @@ async function jar() {
     fs.ensureDirSync(target);
     const bundle = path.join(target, 'eslint-bridge.tar.xz');
     // --force-local is required so windows path starting with C: is recognized as local
-    const cmd = `tar --xz --force-local -cf '${bundle}' *`;
+    const cmd = `tar --xz -cf '${bundle}' *`;
     console.log(cmd);
     const {stdout: tarOut, stderr: tarErr} = await exec(cmd);
     console.log(tarOut);
