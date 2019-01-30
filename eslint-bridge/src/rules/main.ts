@@ -17,17 +17,14 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.javascript.checks;
 
-import java.io.File;
-import org.junit.Test;
-import org.sonar.javascript.checks.verifier.JavaScriptCheckVerifier;
+const rules = [
+  // security hotspots
+  "code-eval",
+];
 
-public class EvalCheckTest {
+const ruleModules: any = {};
 
-  @Test
-  public void test() {
-    JavaScriptCheckVerifier.verify(new EvalCheck(), new File("src/test/resources/checks/eval.js"));
-  }
+rules.forEach(rule => (ruleModules[rule] = require(`./${rule}`)));
 
-}
+export { ruleModules as rules };
